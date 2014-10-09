@@ -1,42 +1,50 @@
 #!/usr/bin/env bash
 
-# parse args 
-for arg; do
-	case $arg in
-		--harmony)
-		--vim)
-		-*)
-	esac
-done
+main() {
+	local harmony=false
+	local vim=false
 
-sudo apt-get update
-sudo apt-get install -y git
+	# parse args 
+	for arg; do
+		case $arg in
+			--harmony)
+			--vim)
+			-*)
+		esac
+	done
 
-curl --silent https://raw.githubusercontent.com/creationix/nvm/v0.17.0/install.sh | sh
-. ~/.nvm/nvm.sh
+	sudo apt-get update
+	sudo apt-get install -y git
 
-node_version
+	setup_node "$harmony"
+	[[ $vim == true ]] && setup_vim()
+}
 
-if is_set $harmony; then
-	node_version='0.11.14'
-	# runs node with all harmony flags enabled
-	printf "alias node='node --harmony'" >> ~/.bashrc
-else
-	node_version='0.10.32'
-fi
+setup_node() {
+	local harmony=$1
 
-nvm install "$node_version"
-nvm alias default "$node_version"
+	curl --silent https://raw.githubusercontent.com/creationix/nvm/v0.17.0/install.sh | sh
+	. ~/.nvm/nvm.sh
 
-# enables tab completion for nvm
-printf '[[ -r "$NVM_DIR"/bash_completion ]] && . "$NVM_DIR"/bash_completion\n' >> ~/.bashrc
-# enables tab completion for npm
-printf '. <(npm completion)\n' >> ~/.bashrc
+	local node_version
 
-if is_set "$vim"; then
+	if [[ $harmony == true ]]; then
+		node_version='0.11.14'
+		# runs node with all harmony flags enabled by default
+		printf "alias node='node --harmony'" >> ~/.bashrc
+	else
+		node_version='0.10.32'
+	fi
+
+	nvm install "$node_version"
+	nvm alias default "$node_version"
+
+	# enables tab completion for nvm
+	printf '[[ -r "$NVM_DIR"/bash_completion ]] && . "$NVM_DIR"/bash_completion\n' >> ~/.bashrc
+	# enables tab completion for npm
+	printf '. <(npm completion)\n' >> ~/.bashrc
+}
+
+setup_vim() {
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
-
-is_set() {
-	[[ $1 = true ]]
 }
