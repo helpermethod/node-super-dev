@@ -33,6 +33,10 @@ printf '[[ -r "$NVM_DIR"/bash_completion ]] && . "$NVM_DIR"/bash_completion\n' >
 # enables tab completion for npm
 printf '. <(npm completion)\n' >> ~/.bashrc
 
+if is_set "$vim"; then
+	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+
 is_set() {
 	[[ $1 = true ]]
 }
