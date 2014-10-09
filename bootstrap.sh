@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # parse args 
-while :; do
-	case $1 in
+for arg; do
+	case $arg in
 		--harmony)
 		--vim)
 		-*)
@@ -17,7 +17,7 @@ curl --silent https://raw.githubusercontent.com/creationix/nvm/v0.17.0/install.s
 
 node_version
 
-if [[ $harmony ]]; then
+if is_set $harmony; then
 	node_version='0.11.14'
 	# runs node with all harmony flags enabled
 	printf "alias node='node --harmony'" >> ~/.bashrc
@@ -32,3 +32,7 @@ nvm alias default "$node_version"
 printf '[[ -r "$NVM_DIR"/bash_completion ]] && . "$NVM_DIR"/bash_completion\n' >> ~/.bashrc
 # enables tab completion for npm
 printf '. <(npm completion)\n' >> ~/.bashrc
+
+is_set() {
+	[[ $1 = true ]]
+}
