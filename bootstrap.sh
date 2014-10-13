@@ -14,7 +14,7 @@ main() {
 				vim=true
 				;;
 			-*)
-				printf "%s: invalid option -- '%s'\n" 'bootstrap.sh' "${arg#-}"
+				printf "%s: invalid option -- '%s'\n" 'bootstrap.sh' "${arg*-}"
 				;;	
 			*)
 				break
