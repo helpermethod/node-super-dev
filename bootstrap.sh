@@ -8,8 +8,16 @@ main() {
 	for arg; do
 		case $arg in
 			--harmony)
+				harmony=true
+				;;
 			--vim)
+				vim=true
+				;;
 			-*)
+				printf "%s: invalid option -- '%s'\n" 'bootstrap.sh' "${arg#-}"
+				;;	
+			*)
+				break
 		esac
 	done
 
