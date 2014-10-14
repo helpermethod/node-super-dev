@@ -25,7 +25,7 @@ main() {
 	sudo apt-get install -y git
 
 	setup_node "$harmony"
-	[[ $vim == true ]] && setup_vim()
+	[[ $vim == true ]] && setup_vim || return 0
 }
 
 setup_node() {
@@ -39,7 +39,7 @@ setup_node() {
 	if [[ $harmony == true ]]; then
 		node_version='0.11.14'
 		# runs node with all harmony flags enabled by default
-		printf "alias node='node --harmony'" >> ~/.bashrc
+		printf "alias node='node --harmony'\n" >> ~/.bashrc
 	else
 		node_version='0.10.32'
 	fi
