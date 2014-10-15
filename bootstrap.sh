@@ -55,8 +55,8 @@ setup_node() {
 
 setup_vim() {
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-	mv /vagrant/.vimrc ~/.vim
-	# TODO install plugins
+	mv /vagrant/.vimrc ~
+	vim +PluginInstall +qall
 }
 
 main "$@"
