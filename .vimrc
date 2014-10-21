@@ -12,6 +12,7 @@ Plugin 'scrooloose/nerdtree'
 call vundle#end()
 filetype plugin indent on
 
+set t_Co=16
 syntax on
 set background=dark
 colorscheme solarized
