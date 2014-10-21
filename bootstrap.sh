@@ -25,7 +25,7 @@ main() {
 	sudo apt-get install -y git
 
 	setup_node "$harmony"
-	[[ $vim == true ]] && setup_vim || return 0
+	[[ $vim == true ]] && setup_vim || true
 }
 
 setup_node() {
