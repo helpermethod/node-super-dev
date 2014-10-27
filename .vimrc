@@ -5,14 +5,13 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'junegunn/seoul256.vim'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 filetype plugin indent on
 
-set t_Co=16
 syntax on
 set background=dark
-:silent! colorscheme solarized
+:silent! colorscheme seoul256
