@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'junegunn/seoul256.vim'
+Plugin 'goatslacker/mango.vim'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 
@@ -14,4 +14,6 @@ filetype plugin indent on
 
 syntax on
 set background=dark
-:silent! colorscheme seoul256
+:silent! colorscheme mango
+
+set number
