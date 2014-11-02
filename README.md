@@ -8,4 +8,5 @@ A Vagrantfile for setting up a Node development environments.
 
 ## -- vim
 
-[Anonymice Powerline](https://github.com/Lokaltog/powerline-fonts/blob/master/AnonymousPro/Anonymice%20Powerline.ttf)
+# Resources
+(Equipping Vim for JavaScript)[http://oli.me.uk/2013/06/29/equipping-vim-for-javascript/]
