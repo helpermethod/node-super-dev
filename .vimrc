@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'goatslacker/mango.vim'
+Plugin 'Lokaltog/vim-distinguished'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 
@@ -14,6 +14,9 @@ filetype plugin indent on
 
 syntax on
 set background=dark
-:silent! colorscheme mango
+:silent! colorscheme distinguished
+
+let g:NERDTreeDirArrows=0
+set laststatus=2
 
 set number
