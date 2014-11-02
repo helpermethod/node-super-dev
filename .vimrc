@@ -17,6 +17,6 @@ set background=dark
 :silent! colorscheme distinguished
 
 let g:NERDTreeDirArrows=0
-set laststatus=2
 
+set laststatus=2
 set number
