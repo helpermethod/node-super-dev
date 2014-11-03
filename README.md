@@ -1,6 +1,6 @@
 # vagrant-node-dev
 
-A Vagrantfile for setting up a Node development environments.
+A Vagrantfile for setting up Node development environments.
 
 # Options
 
