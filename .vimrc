@@ -6,8 +6,11 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'croaker/mustang-vim'
-Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'Raimondi/delimitMate'
 
 call vundle#end()
 filetype plugin indent on

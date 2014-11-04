@@ -4,7 +4,6 @@ main() {
 	local harmony=false
 	local vim=false
 
-	# parse args 
 	for arg; do
 		case $arg in
 			--harmony)
@@ -41,7 +40,7 @@ setup_node() {
 		# runs node with all harmony flags enabled by default
 		printf "alias node='node --harmony'\n" >> ~/.bashrc
 	else
-		node_version='0.10.32'
+		node_version='0.10.33'
 	fi
 
 	nvm install "$node_version"
