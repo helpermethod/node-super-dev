@@ -9,17 +9,17 @@ Plugin 'croaker/mustang-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
-Plugin 'jelera/vim-javascript-syntax'
 Plugin 'Raimondi/delimitMate'
+Plugin 'jelera/vim-javascript-syntax'
 
 call vundle#end()
 filetype plugin indent on
 
+let g:NERDTreeDirArrows=0
+
 syntax on
 set background=dark
 :silent! colorscheme mustang
-
-let g:NERDTreeDirArrows=0
 
 set laststatus=2
 set number
