@@ -23,3 +23,9 @@ set background=dark
 
 set laststatus=2
 set number
+set incsearch
+
+set incsearch
+set hlsearch
+set ignorecase
+nnoremap <CR> :nohhlsearch<CR><CR>
