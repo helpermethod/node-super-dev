@@ -6,7 +6,9 @@ A Vagrantfile for setting up Node development environments.
 
 ## --harmony
 
-## -- vim
+## --vim
+
+    $ SHELL_ARGS='--harmony --vim' vagrant up
 
 # Resources
 
