@@ -11,6 +11,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'Raimondi/delimitMate'
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 
 call vundle#end()
@@ -26,8 +27,9 @@ set laststatus=2
 set number
 
 set incsearch
-set hlsearch
 set ignorecase
+set smartcase
+set hlsearch
 nnoremap <CR> :nohhlsearch<CR><CR>
 
 set expandtab
