@@ -29,3 +29,7 @@ set incsearch
 set hlsearch
 set ignorecase
 nnoremap <CR> :nohhlsearch<CR><CR>
+
+set expandtab
+set shiftwidth=2
+set softtabstop=2
