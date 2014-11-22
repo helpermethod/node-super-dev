@@ -18,7 +18,7 @@ filetype plugin indent on
 
 let g:NERDTreeDirArrows=0
 let delimitMate_expand_cr=1
- let g:indent_guides_enable_on_vim_startup=0
+let g:indent_guides_enable_on_vim_startup=1
 
 syntax on
 set background=dark
