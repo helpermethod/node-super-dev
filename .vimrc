@@ -18,7 +18,7 @@ filetype plugin indent on
 
 let g:NERDTreeDirArrows=0
 let delimitMate_expand_cr=1
-let g:indentLine_color_term=232
+let g:indentLine_color_term=244
 
 syntax on
 set background=dark
@@ -31,10 +31,11 @@ set incsearch
 set ignorecase
 set smartcase
 set hlsearch
-nnoremap <CR> :nohhlsearch<CR><CR>
+nnoremap <CR> :nohlsearch<CR><CR>
 
 set expandtab
 set shiftwidth=2
 set softtabstop=2
 
 au FileType javascript call JavaScriptFold()
+hi Folded ctermbg=244
