@@ -12,6 +12,7 @@ Plugin 'bling/vim-airline'
 Plugin 'Raimondi/delimitMate'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'Yggdroot/indentLine'
+Plugin 'scrooloose/syntastic'
 
 call vundle#end()
 filetype plugin indent on
