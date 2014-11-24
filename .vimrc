@@ -11,14 +11,14 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'Raimondi/delimitMate'
 Plugin 'jelera/vim-javascript-syntax'
-Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
 
 call vundle#end()
 filetype plugin indent on
 
 let g:NERDTreeDirArrows=0
 let delimitMate_expand_cr=1
-let g:indent_guides_enable_on_vim_startup=1
+let g:indentLine_color_term=232
 
 syntax on
 set background=dark
@@ -36,3 +36,5 @@ nnoremap <CR> :nohhlsearch<CR><CR>
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+
+au FileType javascript call JavaScriptFold()
