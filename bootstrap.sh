@@ -62,9 +62,21 @@ setup_vim() {
 
 setup_you_complete_me() {
 	sudo apt-get install -y build-essential cmake python-dev
-	# TODO add swap
+	create_swap
 	(cd ~/.vim/bundle/YouCompleteMe && ./install.sh)
-	# TODO remove swap 
+	delete_swap
+}
+
+create_swap() {
+	sudo fallocate -l 1G /swap
+	sudo mkswap /swap
+	sudo swapon /swap
+}
+
+delete_swap() {
+	echo 3 > /proc/sys/vm/drop_caches
+	swapoff -a
+	rm -f /swap
 }
 
 main "$@"
