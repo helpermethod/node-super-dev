@@ -57,6 +57,14 @@ setup_vim() {
 	cp /vagrant/.vimrc ~
 	vim +PluginInstall +qall
 	npm install -g jshint
+	setup_you_complete_me
+}
+
+setup_you_complete_me() {
+	sudo apt-get install -y build-essential cmake python-dev
+	# TODO add swap
+	(cd ~/.vim/bundle/YouCompleteMe && ./install.sh)
+	# TODO remove swap 
 }
 
 main "$@"
