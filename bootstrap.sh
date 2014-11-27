@@ -67,13 +67,13 @@ __setup_you_complete_me() {
 	delete_swap
 }
 
-create_swap() {
+__create_swap() {
 	sudo fallocate -l 1G /swap
 	sudo mkswap /swap
 	sudo swapon /swap
 }
 
-delete_swap() {
+__delete_swap() {
 	sudo echo 3 > /proc/sys/vm/drop_caches
 	sudo swapoff -a
 	sudo rm -f /swap
