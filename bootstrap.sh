@@ -23,11 +23,11 @@ main() {
 	sudo apt-get update
 	sudo apt-get install -y git
 
-	setup_node "$harmony"
-	[[ $vim == true ]] && setup_vim || true
+	__setup_node "$harmony"
+	[[ $vim == true ]] && __setup_vim || true
 }
 
-setup_node() {
+__setup_node() {
 	local harmony=$1
 
 	curl --silent https://raw.githubusercontent.com/creationix/nvm/v0.17.0/install.sh | sh
@@ -52,15 +52,15 @@ setup_node() {
 	printf '. <(npm completion)\n' >> ~/.bashrc
 }
 
-setup_vim() {
+__setup_vim() {
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	cp /vagrant/.vimrc ~
 	vim +PluginInstall +qall
 	npm install -g jshint
-	setup_you_complete_me
+	__setup_you_complete_me
 }
 
-setup_you_complete_me() {
+__setup_you_complete_me() {
 	sudo apt-get install -y build-essential cmake python-dev
 	# TODO add swap
 	(cd ~/.vim/bundle/YouCompleteMe && ./install.sh)
