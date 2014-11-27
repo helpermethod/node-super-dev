@@ -52,6 +52,13 @@ __setup_node() {
 	printf '. <(npm completion)\n' >> ~/.bashrc
 }
 
+__setup_global_node() {
+	local node_path=$(which node)
+	node_path=${n%/bin/node}
+	chmod -R 755 "$node_path"/bin/* 
+	sudo cp -r "$node_path"/{bin,lib,share} /usr/local
+}
+
 __setup_vim() {
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	cp /vagrant/.vimrc ~
@@ -62,6 +69,7 @@ __setup_vim() {
 
 __setup_you_complete_me() {
 	sudo apt-get install -y build-essential cmake python-dev
+	# prevents running out of memory when compiling YouCompleteMe
 	create_swap
 	(cd ~/.vim/bundle/YouCompleteMe && ./install.sh)
 	delete_swap
