@@ -74,9 +74,9 @@ create_swap() {
 }
 
 delete_swap() {
-	echo 3 > /proc/sys/vm/drop_caches
-	swapoff -a
-	rm -f /swap
+	sudo echo 3 > /proc/sys/vm/drop_caches
+	sudo swapoff -a
+	sudo rm -f /swap
 }
 
 main "$@"
