@@ -44,12 +44,12 @@ __setup_node() {
 	fi
 
 	nvm install "$node_version"
-	nvm alias default "$node_version"
 
 	# enables tab completion for nvm
 	printf '[[ -r "$NVM_DIR"/bash_completion ]] && . "$NVM_DIR"/bash_completion\n' >> ~/.bashrc
 
 	__setup_global_node
+	nvm use system
 
 	# enables tab completion for npm
 	printf '. <(npm completion)\n' >> ~/.bashrc
@@ -75,9 +75,9 @@ __setup_vim() {
 __setup_you_complete_me() {
 	sudo apt-get install -y build-essential cmake python-dev
 	# prevents running out of memory when compiling YouCompleteMe
-	create_swap
+	__create_swap
 	(cd ~/.vim/bundle/YouCompleteMe && ./install.sh)
-	delete_swap
+	__delete_swap
 }
 
 __create_swap() {
@@ -87,7 +87,6 @@ __create_swap() {
 }
 
 __delete_swap() {
-	sudo echo 3 > /proc/sys/vm/drop_caches
 	sudo swapoff -a
 	sudo rm -f /swap
 }
