@@ -14,11 +14,11 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'Yggdroot/indentLine'
 Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'marijnh/tern_for_vim'
 
 call vundle#end()
 filetype plugin indent on
 
-let g:NERDTreeDirArrows=0
 let delimitMate_expand_cr=1
 let g:indentLine_color_term=244
 

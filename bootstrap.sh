@@ -48,13 +48,16 @@ __setup_node() {
 
 	# enables tab completion for nvm
 	printf '[[ -r "$NVM_DIR"/bash_completion ]] && . "$NVM_DIR"/bash_completion\n' >> ~/.bashrc
+
+	__setup_global_node
+
 	# enables tab completion for npm
 	printf '. <(npm completion)\n' >> ~/.bashrc
 }
 
 __setup_global_node() {
 	local node_path=$(which node)
-	node_path=${n%/bin/node}
+	node_path=${node_path%/bin/node}
 	chmod -R 755 "$node_path"/bin/* 
 	sudo cp -r "$node_path"/{bin,lib,share} /usr/local
 }
@@ -63,8 +66,10 @@ __setup_vim() {
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	cp /vagrant/.vimrc ~
 	vim +PluginInstall +qall
+
 	npm install -g jshint
 	__setup_you_complete_me
+	(cd ~/.vim/bundle/tern_for_vim && npm install)
 }
 
 __setup_you_complete_me() {
