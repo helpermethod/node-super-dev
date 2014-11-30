@@ -48,15 +48,14 @@ __setup_node() {
 	# enables tab completion for nvm
 	printf '[[ -r "$NVM_DIR"/bash_completion ]] && . "$NVM_DIR"/bash_completion\n' >> ~/.bashrc
 
-	update_global_node
+	__setup_global_node
 	nvm use system
-	printf '\n%s\n' "$(declare -f set_global_node)" >> ~/.bashrc
 
 	# enables tab completion for npm
 	printf '. <(npm completion)\n' >> ~/.bashrc
 }
 
-update_global_node() {
+__setup_global_node() {
 	local node_path=$(which node)
 	node_path=${node_path%/bin/node}
 	chmod -R 755 "$node_path"/bin/* 
