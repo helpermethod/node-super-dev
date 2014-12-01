@@ -15,7 +15,6 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
-Plugin 'myhere/vim-nodejs-complete'
 
 call vundle#end()
 filetype plugin indent on
