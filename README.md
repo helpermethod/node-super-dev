@@ -1,4 +1,5 @@
-# vagrant-node-dev
+# node-super-dev
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/helpermethod/node-super-dev?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 A Vagrantfile for setting up Node development environments.
 
