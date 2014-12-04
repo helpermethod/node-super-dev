@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 
 main() {
+	local release=stable
 	local harmony=false
 	local vim=false
 
 	for arg; do
 		case $arg in
+			--unstable)
+				release=unstable
+				;;
 			--harmony)
 				harmony=true
 				;;
@@ -23,25 +27,22 @@ main() {
 	sudo apt-get update
 	sudo apt-get install -y git
 
-	__setup_node "$harmony"
+	__setup_node "$release" "$harmony"
 	[[ $vim == true ]] && __setup_vim || true
 }
 
 __setup_node() {
-	local harmony=$1
+	local release=$1
+	local harmony=$2
 
 	curl --silent https://raw.githubusercontent.com/creationix/nvm/v0.17.0/install.sh | sh
 	. ~/.nvm/nvm.sh
 
 	local node_version
 
-	if [[ $harmony == true ]]; then
-		node_version='0.11.14'
-		# runs node with all harmony flags enabled by default
-		printf "alias node='node --harmony'\n" >> ~/.bashrc
-	else
-		node_version='0.10.33'
-	fi
+	node_version=$release
+	# runs node with all harmony flags enabled by default
+	[[ $harmony == true ]] && printf "alias node='node --harmony'\n" >> ~/.bashrc
 
 	nvm install "$node_version"
 
