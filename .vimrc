@@ -11,7 +11,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'Raimondi/delimitMate'
 Plugin 'jelera/vim-javascript-syntax'
-Plugin 'Yggdroot/indentLine'
 Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
@@ -20,7 +19,6 @@ call vundle#end()
 filetype plugin indent on
 
 let delimitMate_expand_cr=1
-let g:indentLine_color_term=244
 " hides YouCompleteMe's preview window
 let g:ycm_add_preview_to_completeopt=0
 set completeopt-=preview
