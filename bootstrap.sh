@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+readonly nvm_version=v0.20.0
+
 main() {
 	local release=stable
 	local harmony=false
@@ -35,16 +37,13 @@ __setup_node() {
 	local release=$1
 	local harmony=$2
 
-	curl --silent https://raw.githubusercontent.com/creationix/nvm/v0.17.0/install.sh | sh
+	curl --silent https://raw.githubusercontent.com/creationix/nvm/"$nvm_version"/install.sh | sh
 	. ~/.nvm/nvm.sh
 
-	local node_version
-
-	node_version=$release
 	# runs node with all harmony flags enabled by default
 	[[ $harmony == true ]] && printf "alias node='node --harmony'\n" >> ~/.bashrc
 
-	nvm install "$node_version"
+	nvm install "$release"
 
 	# enables tab completion for nvm
 	printf '[[ -r "$NVM_DIR"/bash_completion ]] && . "$NVM_DIR"/bash_completion\n' >> ~/.bashrc
