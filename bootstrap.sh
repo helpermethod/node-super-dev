@@ -18,6 +18,10 @@ main() {
 			--vim)
 				vim=true
 				;;
+			--all)
+				release=unstable
+				harmony=true
+				vim=true
 			-*)
 				printf "%s: invalid option -- '%s'\n" 'bootstrap.sh' "${arg*-}"
 				;;	
