@@ -3,11 +3,40 @@
 
 A Vagrantfile for setting up Node development environments.
 
+# Getting started
+
+If you haven't done so already install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](https://www.vagrantup.com/downloads.html).
+
+Clone the node-super-dev repository
+
+    $ git clone https://github.com/helpermethod/node-super-dev
+
+Run 
+
+    $ vagrant up
+
+to provision a Ubuntu Trusty Tahr 64-Bit VM with the latest stable release of Node installed.
+
 # Options
+
+## --unstable
+
+By default the latest stable release of Node is installed. Use this option to install the lastest unstable release.
 
 ## --harmony
 
+Requires the `--unstable` option to be set.
+
+Will setup Node to be run with ES6 feature enabled by default.
+
+When no `--unstable` option is provided a warning will be shown.
+
 ## --vim
+
+Sets up vim for JavaScript development. Installs the following plugins using [Vundle](https://github.com/gmarik/Vundle.vim)
+
+* [Mustang](https://github.com/croaker/mustang-vim) A terminal colorscheme suitable for JavaScript development.
+* 
 
     $ SHELL_ARGS='--harmony --vim' vagrant up
 
