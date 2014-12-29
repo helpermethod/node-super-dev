@@ -11,13 +11,11 @@ Clone the node-super-dev repository
 
     $ git clone https://github.com/helpermethod/node-super-dev
 
-Run 
-
-    $ vagrant up
-
-to provision a Ubuntu Trusty Tahr 64-Bit VM with the latest stable release of Node installed.
+and run `$ vagrant up` to provision a Ubuntu Trusty Tahr 64-Bit VM with the latest stable release of Node installed.
 
 # Options
+
+Use the `SHELL_ARGS` environment variable to pass options to the shell provisioner.
 
 ## --unstable
 
