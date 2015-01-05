@@ -36,7 +36,13 @@ Sets up vim for JavaScript development. Installs the following plugins using [Vu
 * [Mustang](https://github.com/croaker/mustang-vim) A terminal colorscheme suitable for JavaScript development.
 * 
 
-    $ SHELL_ARGS='--harmony --vim' vagrant up
+## --all
+
+Equivalent to invoking all previous commandline options at once.
+
+### Example
+
+    $ SHELL_ARGS='--unstable --harmony --vim' vagrant up
 
 # Resources
 
