@@ -25,7 +25,7 @@ By default the latest stable release of Node is installed. Use this option to in
 
 Requires the `--unstable` option to be set.
 
-Will setup Node to be run with ES6 feature enabled by default.
+Will setup Node to be run with ES6 features enabled by default.
 
 When no `--unstable` option is provided a warning will be shown.
 
