@@ -45,19 +45,22 @@ __setup_node() {
 	curl --silent https://raw.githubusercontent.com/creationix/nvm/"$nvm_version"/install.sh | sh
 	. ~/.nvm/nvm.sh
 
-	# runs node with all harmony flags enabled by default
+	# run node with all harmony flags enabled by default
 	[[ $harmony == true ]] && printf "alias node='node --harmony'\n" >> ~/.bashrc
 
 	nvm install "$release"
 
-	# enables tab completion for nvm
+	# enable tab completion for nvm
 	printf '[[ -r "$NVM_DIR"/bash_completion ]] && . "$NVM_DIR"/bash_completion\n' >> ~/.bashrc
 
 	__setup_global_node
 	nvm use system
 
-	# enables tab completion for npm
+	# enable tab completion for npm
 	printf '. <(npm completion)\n' >> ~/.bashrc
+
+	# update npm to the latest version
+	sudo npm install -g npm
 }
 
 __setup_global_node() {
@@ -79,7 +82,7 @@ __setup_vim() {
 
 __setup_you_complete_me() {
 	sudo apt-get install -y build-essential cmake python-dev
-	# prevents running out of memory when compiling YouCompleteMe
+	# prevent running out of memory when compiling YouCompleteMe
 	__create_swap
 	(cd ~/.vim/bundle/YouCompleteMe && ./install.sh)
 	__delete_swap
