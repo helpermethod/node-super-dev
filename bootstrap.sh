@@ -53,21 +53,10 @@ __setup_node() {
 	# enable tab completion for nvm
 	printf '[[ -r "$NVM_DIR"/bash_completion ]] && . "$NVM_DIR"/bash_completion\n' >> ~/.bashrc
 
-	__setup_global_node
-	nvm use system
+	nvm alias default "$release"
 
 	# enable tab completion for npm
 	printf '. <(npm completion)\n' >> ~/.bashrc
-
-	# update npm to the latest version
-	sudo npm install -g npm
-}
-
-__setup_global_node() {
-	local node_path=$(which node)
-	node_path=${node_path%/bin/node}
-	chmod -R 755 "$node_path"/bin/* 
-	sudo cp -r "$node_path"/{bin,lib,share} /usr/local
 }
 
 __setup_vim() {
