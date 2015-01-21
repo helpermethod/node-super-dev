@@ -55,6 +55,9 @@ __setup_node() {
 
 	nvm alias default "$release"
 
+	# update npm to the latest version
+	npm install -g npm
+
 	# enable tab completion for npm
 	printf '. <(npm completion)\n' >> ~/.bashrc
 }
