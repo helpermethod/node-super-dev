@@ -34,7 +34,6 @@ When no `--unstable` option is provided a warning will be shown.
 Sets up vim for JavaScript development. Installs the following plugins using [Vundle](https://github.com/gmarik/Vundle.vim)
 
 * [Mustang](https://github.com/croaker/mustang-vim) A terminal colorscheme suitable for JavaScript development.
-* 
 
 ## --all
 
