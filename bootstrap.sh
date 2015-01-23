@@ -67,7 +67,7 @@ __setup_vim() {
 	cp /vagrant/.vimrc ~
 	vim +PluginInstall +qall
 
-	sudo npm install -g jshint
+	npm install -g jshint
 	__setup_you_complete_me
 	(cd ~/.vim/bundle/tern_for_vim && npm install)
 }
