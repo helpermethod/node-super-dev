@@ -40,9 +40,3 @@ nnoremap <CR> :nohlsearch<CR><CR>
 set expandtab
 set shiftwidth=2
 set softtabstop=2
-
-au FileType javascript call JavaScriptFold()
-hi Folded ctermbg=244
-" saves and restores folds automatically
-au BufWinLeave ?* mkview
-au BufWinEnter ?* silent loadview
