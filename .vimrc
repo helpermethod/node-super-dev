@@ -15,11 +15,17 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
+Plugin 'mattn/emmet-vim'
 
 call vundle#end()
 filetype plugin indent on
 
 let delimitMate_expand_cr=1
+
+if executable('jsxhint')
+  let g:syntastic_javascript_checkers = ['jsxhint']
+endif
+
 " hide YouCompleteMe's preview window
 let g:ycm_add_preview_to_completeopt=0
 set completeopt-=preview

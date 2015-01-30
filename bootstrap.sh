@@ -18,6 +18,9 @@ main() {
 			--vim)
 				vim=true
 				;;
+			--jsx)
+				jsx=true
+				;;
 			--all)
 				release=unstable
 				harmony=true
@@ -67,7 +70,8 @@ __setup_vim() {
 	cp /vagrant/.vimrc ~
 	vim +PluginInstall +qall
 
-	npm install -g jshint
+	[[ $jsx == true ]] && npm install -g jsxhint || npm install -g jshint
+
 	__setup_you_complete_me
 	(cd ~/.vim/bundle/tern_for_vim && npm install)
 }
