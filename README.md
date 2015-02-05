@@ -42,6 +42,10 @@ Equivalent to invoking all previous commandline options at once.
 ### Example
 
     $ SHELL_ARGS='--unstable --harmony --vim' vagrant up
+    
+# Screenshot
+
+![Screenshot](http://i.imgur.com/69UlLvg.png)
 
 # Resources
 
