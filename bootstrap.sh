@@ -6,6 +6,7 @@ main() {
 	local release=stable
 	local harmony=false
 	local vim=false
+	local jsx=false
 
 	for arg; do
 		case $arg in
@@ -25,6 +26,7 @@ main() {
 				release=unstable
 				harmony=true
 				vim=true
+				jsx=true
 				;;
 			-*)
 				printf "%s: invalid option -- '%s'\n" 'bootstrap.sh' "${arg*-}"
@@ -38,7 +40,7 @@ main() {
 	sudo apt-get install -y git
 
 	__setup_node "$release" "$harmony"
-	[[ $vim == true ]] && __setup_vim || true
+	[[ $vim == true ]] && __setup_vim "$jsx" || true
 }
 
 __setup_node() {
@@ -67,7 +69,7 @@ __setup_node() {
 
 __setup_vim() {
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-	cp /vagrant/.vimrc ~
+	cp /vagrant/{.vimrc,.tmux.conf} ~
 	vim +PluginInstall +qall
 
 	[[ $jsx == true ]] && npm install -g jsxhint || npm install -g jshint
