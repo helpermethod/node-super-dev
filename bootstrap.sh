@@ -68,6 +68,8 @@ __setup_node() {
 }
 
 __setup_vim() {
+	local jsx=$1
+	
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	cp /vagrant/{.vimrc,.tmux.conf} ~
 	vim +PluginInstall +qall
