@@ -45,9 +45,8 @@ Equivalent to invoking all previous commandline options at once.
     
 # Screenshots
 
-A Vagrant Box with vim JavaScript support
-
-![node-super-dev-all](http://i.imgur.com/lT8DjAC.png?1)
+![node-super-dev-tmux](http://i.imgur.com/lT8DjAC.png?1)
+![node-super-dev-gulp](http://i.imgur.com/VdircQG.png?1)
 
 # Resources
 
