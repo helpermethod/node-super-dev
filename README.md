@@ -45,6 +45,10 @@ Equivalent to invoking all previous commandline options at once.
     
 # Screenshots
 
+A Vagrant Box with vim JavaScript support
+
+![node-super-dev-all](http://i.imgur.com/lT8DjAC.png?1)
+
 # Resources
 
 * [Equipping Vim for JavaScript](http://oli.me.uk/2013/06/29/equipping-vim-for-javascript/)
