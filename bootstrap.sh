@@ -13,9 +13,6 @@ main() {
 			--unstable)
 				release=unstable
 				;;
-			--harmony)
-				harmony=true
-				;;
 			--vim)
 				vim=true
 				;;
@@ -39,19 +36,15 @@ main() {
 	sudo apt-get update
 	sudo apt-get install -y git
 
-	__setup_node "$release" "$harmony"
+	__setup_node "$release"
 	[[ $vim == true ]] && __setup_vim "$jsx" || true
 }
 
 __setup_node() {
 	local release=$1
-	local harmony=$2
 
 	curl --silent https://raw.githubusercontent.com/creationix/nvm/"$nvm_version"/install.sh | sh
 	. ~/.nvm/nvm.sh
-
-	# run node with all harmony flags enabled by default
-	[[ $harmony == true ]] && printf "alias node='node --harmony'\n" >> ~/.bashrc
 
 	nvm install "$release"
 
