@@ -21,14 +21,6 @@ Use the `SHELL_ARGS` environment variable to pass options to the shell provision
 
 By default the latest stable release of Node is installed. Use this option to install the lastest unstable release.
 
-## --harmony
-
-Requires the `--unstable` option to be set.
-
-Will setup Node to be run with ES6 features enabled by default.
-
-When no `--unstable` option is provided a warning will be shown.
-
 ## --vim
 
 Sets up vim for JavaScript development. Installs the following plugins via [Vundle](https://github.com/gmarik/Vundle.vim)
@@ -42,6 +34,11 @@ Equivalent to invoking all previous commandline options at once.
 ### Example
 
     $ SHELL_ARGS='--unstable --harmony --vim' vagrant up
+    
+# Screenshots
+
+![node-super-dev-tmux](http://i.imgur.com/lT8DjAC.png?1)
+![node-super-dev-gulp](http://i.imgur.com/VdircQG.png?1)
 
 # Resources
 
