@@ -20,7 +20,6 @@ main() {
 				;;
 			--all)
 				release=unstable
-				harmony=true
 				vim=true
 				jsx=true
 				;;
