@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-readonly nvm_version=v0.23.3
+readonly nvm_version=v0.25.4
 
 main() {
 	local release=stable
