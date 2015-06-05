@@ -4,7 +4,6 @@ readonly nvm_version=v0.25.4
 
 main() {
 	local release=stable
-	local harmony=false
 	local vim=false
 	local jsx=false
 
@@ -21,7 +20,6 @@ main() {
 				;;
 			--all)
 				release=unstable
-				harmony=true
 				vim=true
 				jsx=true
 				;;
