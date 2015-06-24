@@ -34,6 +34,7 @@ set background=dark
 
 set laststatus=2
 set number
+set relativenumber
 
 set incsearch
 set ignorecase
