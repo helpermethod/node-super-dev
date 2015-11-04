@@ -1,36 +1,30 @@
 set nocompatible
-filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'croaker/mustang-vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-airline'
-Plugin 'Raimondi/delimitMate'
-Plugin 'pangloss/vim-javascript'
-Plugin 'scrooloose/syntastic'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'marijnh/tern_for_vim'
-
-call vundle#end()
-filetype plugin indent on
+call plug#begin()
+Plug 'croaker/mustang-vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'bling/vim-airline'
+Plug 'Raimondi/delimitMate'
+Plug 'pangloss/vim-javascript'
+Plug 'scrooloose/syntastic'
+Plug 'Valloric/YouCompleteMe', { 'do': 'sudo apt-get install -y build-essential cmake python-dev \| ./install.py' }
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+call plug#end()
 
 let delimitMate_expand_cr=1
-
-if executable('jsxhint')
-  let g:syntastic_javascript_checkers = ['jsxhint']
-endif
 
 " hide YouCompleteMe's preview window
 let g:ycm_add_preview_to_completeopt=0
 set completeopt-=preview
 
-syntax on
 set background=dark
-:silent! colorscheme mustang
+silent !colorscheme mustang
 
 set laststatus=2
 set number
