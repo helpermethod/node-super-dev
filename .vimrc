@@ -13,7 +13,7 @@ Plug 'bling/vim-airline'
 Plug 'Raimondi/delimitMate'
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/syntastic'
-Plug 'Valloric/YouCompleteMe', { 'do': 'sudo apt-get install -y build-essential cmake python-dev \| ./install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'sudo apt-get install -y build-essential cmake python-dev && ./install.py' }
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 call plug#end()
 
