@@ -19,12 +19,16 @@ call plug#end()
 
 let delimitMate_expand_cr=1
 
+if executable('eslint')
+  let g:syntastic_javascript_checkers = ['eslint']
+endif
+
 " hide YouCompleteMe's preview window
 let g:ycm_add_preview_to_completeopt=0
 set completeopt-=preview
 
 set background=dark
-silent! colorscheme mustang
+colorscheme mustang
 
 set laststatus=2
 set number
